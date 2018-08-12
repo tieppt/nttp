@@ -125,6 +125,46 @@
           }
         }
       }
+    },
+    "np-mat-dialog": {
+      "root": "libs/np-mat-dialog",
+      "sourceRoot": "libs/np-mat-dialog/src",
+      "projectType": "library",
+      "prefix": "np",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/np-mat-dialog/tsconfig.lib.json",
+            "project": "libs/np-mat-dialog/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "libs/np-mat-dialog/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/np-mat-dialog/src/test.ts",
+            "tsConfig": "libs/np-mat-dialog/tsconfig.spec.json",
+            "karmaConfig": "libs/np-mat-dialog/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/np-mat-dialog/tsconfig.lib.json",
+              "libs/np-mat-dialog/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "nttp",

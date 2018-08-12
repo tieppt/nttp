@@ -13,6 +13,9 @@
     },
     "nttp-e2e": {
       "tags": []
+    },
+    "np-mat-dialog": {
+      "tags": []
     }
   }
 }

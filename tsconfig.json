@@ -10,17 +10,11 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "paths": {
-      "@nttp/*": [
-        "libs/*"
-      ]
+      "@nttp/*": ["libs/*"],
+      "@nttp/np-mat-dialog": ["libs/np-mat-dialog/index.ts"]
     }
   }
 }
