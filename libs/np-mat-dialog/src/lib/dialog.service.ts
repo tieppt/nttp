@@ -4,7 +4,7 @@ import { BaseDialogComponent } from './base-dialog/base-dialog.component';
 
 @Injectable()
 export class DialogService {
-  defaultOptions: MatDialogConfig = {
+  private readonly defaultOptions: MatDialogConfig = {
     minWidth: '80vw',
     maxWidth: '85vw',
     minHeight: '200px',
@@ -13,7 +13,7 @@ export class DialogService {
   constructor(private dialog: MatDialog) {}
 
   public open<T = any>(message: string, options: MatDialogConfig<T> = {}): MatDialogRef<BaseDialogComponent> {
-    options = Object.assign(this.defaultOptions, options);
+    options = Object.assign({}, this.defaultOptions, options);
     const dialogRef = this.dialog.open<BaseDialogComponent>(BaseDialogComponent, options);
 
     const component = dialogRef.componentInstance;
