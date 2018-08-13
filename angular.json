@@ -131,6 +131,11 @@
       "sourceRoot": "libs/np-mat-dialog/src",
       "projectType": "library",
       "prefix": "np",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",

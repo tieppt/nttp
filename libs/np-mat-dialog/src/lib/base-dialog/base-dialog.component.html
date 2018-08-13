@@ -1,8 +1,29 @@
-<h1 mat-dialog-title>Modal title</h1>
-<div mat-dialog-content>
-  <p>{{ message }}</p>
+<div mat-dialog-title>
+  <h1 *ngIf="titleType === 0">{{title}}</h1>
+  <ng-container *ngIf="titleType === 1">
+    <ng-container *ngTemplateOutlet="title"></ng-container>
+  </ng-container>
+  <ng-container *ngIf="titleType === 2">
+    <ng-container *ngComponentOutlet="title"></ng-container>
+  </ng-container>
 </div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close="cancel">Cancel</button>
-  <button mat-button mat-dialog-close="ok" color="primary">Ok</button>
+<div mat-dialog-content>
+  <p *ngIf="contentType === 0">{{content}}</p>
+  <ng-container *ngIf="contentType === 1">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </ng-container>
+  <ng-container *ngIf="contentType === 2">
+    <ng-container *ngComponentOutlet="content"></ng-container>
+  </ng-container>
+</div>
+<div mat-dialog-actions *ngIf="actionsType !== 1 && actionsType !== 2">
+  <button mat-button mat-raised-button mat-dialog-close="cancel">Cancel</button>
+  <button mat-button mat-raised-button mat-dialog-close="ok" color="primary">Ok</button>
+</div>
+
+<div mat-dialog-actions *ngIf="actionsType === 1">
+  <ng-container *ngTemplateOutlet="actions"></ng-container>
+</div>
+<div mat-dialog-actions *ngIf="actionsType === 2">
+  <ng-container *ngComponentOutlet="actions"></ng-container>
 </div>

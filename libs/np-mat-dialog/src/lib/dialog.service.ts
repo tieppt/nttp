@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { BaseDialogComponent } from './base-dialog/base-dialog.component';
+import { DialogOptions } from './dialog.model';
 
 @Injectable()
 export class DialogService {
@@ -12,13 +13,22 @@ export class DialogService {
   };
   constructor(private dialog: MatDialog) {}
 
-  public open<T = any>(message: string, options: MatDialogConfig<T> = {}): MatDialogRef<BaseDialogComponent> {
+  public open<T = any>(
+    dialogOptions: DialogOptions,
+    options: MatDialogConfig<T> = {}
+  ): MatDialogRef<BaseDialogComponent> {
     options = Object.assign({}, this.defaultOptions, options);
     const dialogRef = this.dialog.open<BaseDialogComponent>(BaseDialogComponent, options);
 
     const component = dialogRef.componentInstance;
-    Object.assign(component, { message });
-
+    Object.assign(component, dialogOptions);
+    component.update(dialogOptions);
     return dialogRef;
   }
+  // TODO: implement following methods
+  public confirm() {}
+  public info() {}
+  public success() {}
+  public error() {}
+  public warning() {}
 }

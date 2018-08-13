@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DialogService } from '@nttp/np-mat-dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'np-root',
@@ -8,10 +9,20 @@ import { DialogService } from '@nttp/np-mat-dialog';
 })
 export class AppComponent {
   title = 'nttp';
+  ref: MatDialogRef<any>;
   constructor(private dialogService: DialogService) {}
 
-  openDialog() {
-    const ref = this.dialogService.open('Message from AppComponent!');
+  openDialog(tmpl, actions) {
+    const ref = this.dialogService.open({ content: tmpl, actions });
     ref.afterClosed().subscribe(r => console.log({ r }));
+    this.ref = ref;
+  }
+
+  cancel() {
+    this.ref.close('nope');
+  }
+
+  ok() {
+    this.ref.close('okkk');
   }
 }
