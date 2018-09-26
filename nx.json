@@ -8,13 +8,13 @@
     "nx.json": "*"
   },
   "projects": {
-    "nttp": {
-      "tags": []
-    },
-    "nttp-e2e": {
-      "tags": []
-    },
     "np-mat-dialog": {
+      "tags": []
+    },
+    "client": {
+      "tags": []
+    },
+    "client-e2e": {
       "tags": []
     }
   }

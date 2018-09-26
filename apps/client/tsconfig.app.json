@@ -1,11 +1,14 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/apps/nttp",
+    "outDir": "../../dist/out-tsc/apps/client",
     "types": []
   },
   "exclude": [
-    "src/test.ts",
+    "test.ts",
     "**/*.spec.ts"
+  ],
+  "include": [
+    "**/*.ts"
   ]
 }
