@@ -16,6 +16,9 @@
     },
     "client-e2e": {
       "tags": []
+    },
+    "web-core": {
+      "tags": []
     }
   }
 }

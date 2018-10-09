@@ -10,11 +10,29 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "paths": {
-      "@nttp/*": ["libs/*"],
-      "@nttp/np-mat-dialog": ["libs/np-mat-dialog/index.ts"]
+      "@client-app/*": [
+        "apps/client/src/app/*"
+      ],
+      "@client-env/*": [
+        "apps/client/src/environments/*"
+      ],
+      "@nttp/*": [
+        "libs/*"
+      ],
+      "@nttp/np-mat-dialog": [
+        "libs/np-mat-dialog/index.ts"
+      ],
+      "@nttp/web/core": [
+        "libs/web/core/index.ts"
+      ]
     }
   }
 }
