@@ -32,6 +32,9 @@
       ],
       "@nttp/web/core": [
         "libs/web/core/index.ts"
+      ],
+      "@nttp/common": [
+        "libs/common/index.ts"
       ]
     }
   }

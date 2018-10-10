@@ -208,6 +208,34 @@
           }
         }
       }
+    },
+    "common": {
+      "root": "libs/common",
+      "sourceRoot": "libs/common/src",
+      "projectType": "library",
+      "prefix": "nttp",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/tsconfig.lib.json",
+              "libs/common/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/common/jest.config.js",
+            "tsConfig": "libs/common/tsconfig.spec.json",
+            "setupFile": "libs/common/src/test-setup.ts"
+          }
+        }
+      }
     }
   },
   "defaultProject": "client",

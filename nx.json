@@ -19,6 +19,9 @@
     },
     "web-core": {
       "tags": []
+    },
+    "common": {
+      "tags": []
     }
   }
 }
