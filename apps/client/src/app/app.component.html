@@ -1,3 +1,14 @@
 <div style="text-align:center">
   <h1 class="txt-primary">Welcome to {{title}}!</h1>
 </div>
+<nz-carousel nzAutoPlay>
+  <div nz-carousel-content *ngFor="let index of array">
+    <h3>{{index}}</h3>
+  </div>
+</nz-carousel>
+
+<nz-collapse nzAccordion>
+  <nz-collapse-panel *ngFor="let panel of panels" [nzHeader]="panel.name" [nzActive]="panel.active">
+    <p>{{panel.name}} content</p>
+  </nz-collapse-panel>
+</nz-collapse>
