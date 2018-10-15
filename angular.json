@@ -236,6 +236,34 @@
           }
         }
       }
+    },
+    "web-auth": {
+      "root": "libs/web/auth",
+      "sourceRoot": "libs/web/auth/src",
+      "projectType": "library",
+      "prefix": "np",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/web/auth/src/test.ts",
+            "tsConfig": "libs/web/auth/tsconfig.spec.json",
+            "karmaConfig": "libs/web/auth/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/web/auth/tsconfig.lib.json",
+              "libs/web/auth/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "client",

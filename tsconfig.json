@@ -35,6 +35,9 @@
       ],
       "@nttp/common": [
         "libs/common/index.ts"
+      ],
+      "@nttp/web/auth": [
+        "libs/web/auth/index.ts"
       ]
     }
   }

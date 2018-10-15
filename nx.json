@@ -22,6 +22,9 @@
     },
     "common": {
       "tags": []
+    },
+    "web-auth": {
+      "tags": []
     }
   }
 }
