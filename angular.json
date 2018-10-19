@@ -97,7 +97,14 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
@@ -257,6 +264,34 @@
             "tsConfig": [
               "libs/web/auth/tsconfig.lib.json",
               "libs/web/auth/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "web-input-mask": {
+      "root": "libs/web/input-mask",
+      "sourceRoot": "libs/web/input-mask/src",
+      "projectType": "library",
+      "prefix": "nttp",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/web/input-mask/src/test.ts",
+            "tsConfig": "libs/web/input-mask/tsconfig.spec.json",
+            "karmaConfig": "libs/web/input-mask/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/web/input-mask/tsconfig.lib.json",
+              "libs/web/input-mask/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

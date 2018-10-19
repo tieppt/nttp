@@ -25,6 +25,9 @@
     },
     "web-auth": {
       "tags": []
+    },
+    "web-input-mask": {
+      "tags": []
     }
   }
 }

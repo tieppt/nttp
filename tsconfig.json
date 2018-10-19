@@ -38,6 +38,9 @@
       ],
       "@nttp/web/auth": [
         "libs/web/auth/index.ts"
+      ],
+      "@nttp/web/input-mask": [
+        "libs/web/input-mask/index.ts"
       ]
     }
   }
