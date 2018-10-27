@@ -32,6 +32,10 @@ This directory include all interceptors for this Feature
 
 This directory include all directives for this Feature
 
+## `pipes` - optional
+
+This directory include all pipes for this Feature
+
 ## `validators` - optional
 
 This directory include all validator functions/directives for this Feature
