@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
 registerLocaleData(en);
 
-function getTokenId(): string {
+export function getTokenId(): string {
   // logic here
   return 'Token_ID';
 }
